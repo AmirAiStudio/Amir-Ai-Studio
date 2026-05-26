@@ -1,0 +1,6 @@
+{
+  "name": "Amir AI Studio",
+  "description": "An educational and creative AI platform showcasing AI courses, prompt libraries, and interactive digital creative services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -22,7 +22,9 @@ import {
   HelpCircle,
   ChevronLeft,
   Sun,
-  Moon
+  Moon,
+  Menu,
+  X
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Course, PromptItem, PortfolioItem, OptimizeResponse } from "./types";
@@ -83,6 +85,7 @@ export default function App() {
 
   // Navigation State
   const [activeTab, setActiveTab] = useState<"home" | "about" | "courses" | "library" | "showcase" | "contact">("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   // Modal State for Course Syllabus Details
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -441,9 +444,66 @@ export default function App() {
             >
               <span className="text-[11px] font-bold text-white shrink-0 leading-none">{isArabic ? "EN" : "ع"}</span>
             </button>
+
+            {/* Mobile Menu Hamburger Toggle Button */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden w-[44px] h-[44px] shrink-0 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-[#00f0ff]/50 rounded-lg transition-all duration-300 flex items-center justify-center cursor-pointer text-white"
+              title={isArabic ? "القائمة" : "Menu"}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#00f0ff]" /> : <Menu className="w-5 h-5 text-slate-300" />}
+            </button>
           </div>
 
         </div>
+
+        {/* Mobile Navigation Dropdown Menu with motion animations */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="lg:hidden overflow-hidden border-t border-slate-950 mt-4 bg-slate-950/95 backdrop-blur-xl rounded-2xl border border-slate-900/50 p-2"
+            >
+              <div dir={isArabic ? "rtl" : "ltr"} className="flex flex-col space-y-1">
+                {(() => {
+                  const baseItems: { ar: string; en: string; targetId: string; tab: "home" | "about" | "courses" | "library" | "showcase" | "contact" }[] = [
+                    { ar: "الرئيسية", en: "MAIN", targetId: "home-hero", tab: "home" },
+                    { ar: "رؤيتنا", en: "OUR VISION", targetId: "about-section", tab: "about" },
+                    { ar: "الكورسات", en: "COURSES", targetId: "courses-section", tab: "courses" },
+                    { ar: "منصة الأوامر", en: "PROMPT HUB", targetId: "library-section", tab: "library" },
+                    { ar: "آخر الأخبار", en: "LATEST NEWS", targetId: "portfolio-section", tab: "showcase" },
+                    { ar: "اتصل بنا", en: "CONTACT", targetId: "contact-section", tab: "contact" }
+                  ];
+                  return baseItems.map((item) => (
+                    <button
+                      key={item.en}
+                      onClick={() => {
+                        scrollToSection(item.targetId, item.tab);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`w-full py-3 px-4 text-xs font-brand tracking-widest uppercase transition-all duration-300 cursor-pointer flex items-center justify-between rounded-xl hover:bg-slate-900/50 ${
+                        activeTab === item.tab 
+                          ? "text-[#00f0ff] bg-[#00f0ff]/5 font-black font-brand" 
+                          : "text-slate-400 hover:text-white"
+                      }`}
+                    >
+                      <span>{isArabic ? item.ar : item.en}</span>
+                      {isArabic ? (
+                        <ChevronLeft className="w-4 h-4 text-slate-500" />
+                      ) : (
+                        <ChevronRight className="w-4 h-4 text-slate-500" />
+                      )}
+                    </button>
+                  ));
+                })()}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
       </nav>
 
        {/* MAIN CONTAINER CONTENT WRAPPER */}

@@ -7,13 +7,12 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({ isArabic }: WhatsAppButtonProps) {
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(true);
 
   useEffect(() => {
-    // Show tooltip after 4 seconds to subtly capture attention
     const timer = setTimeout(() => {
-      setShowTooltip(true);
-    }, 4000);
+      setShowTooltip(false);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);

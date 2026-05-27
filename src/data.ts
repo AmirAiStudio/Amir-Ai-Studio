@@ -127,7 +127,7 @@ export const AR_CONTENT: StudioContent = {
   optOptimizing: "جاري تحليل اللكنة وصياغة المؤثرات البصرية الباهرة...",
   optResultTitle: "الأمر النصي الفاخر المحسن للتطبيق المباشر:",
   optCopyResult: "نسخ النتيجة الذهبية المحسنة",
-  portfolioBadge: "تابع كل الجديد عن الـ Ai",
+  portfolioBadge: "اكتشف أحدث تطورات عالم الذكاء الاصطناعي",
   portfolioTitle: "آخر الأخبار والتحديثات",
   contactTitle: "دعنا نبني فكرتك بالذكاء الاصطناعي",
   contactBadge: "بوابة الاتصال الذكي",
@@ -624,59 +624,241 @@ High-end illustration quality, smooth textures, balanced symmetry, no clutter, n
 export const AR_PORTFOLIO: PortfolioItem[] = [
   {
     id: "pr1",
-    title: "إطلاق الكورس الجديد والمميز: VIBE CODING",
-    category: "أخبار الكورسات والمناهج",
-    description: "تم رسمياً دمج كورس صناعة البرمجيات والمشاريع الرقمية التفاعلية باللغة العربية عبر وهندسة الأوامر مع الذكاء الاصطناعي لبناء واجهات برمجية حقيقية خطوة بخطوة وبدون خبرة سابقة.",
-    imageUrl: "/src/assets/images/futuristic_ai_hero_1779813579793.png",
+    title: "إطلاق كورس الـ Vibe Coding",
+    category: "أخبار الكورسات والمنصة",
+    description: "أطلقنا رسميًا برنامج VIBE CODING، المسار العملي المتخصص في بناء المواقع التفاعلية الحديثة باستخدام الذكاء الاصطناعي، وتصميم تجارب رقمية احترافية بواجهات مستقبلية.",
+    fullDescription: `أطلقنا بحمد الله أحد أحدث البرامج التدريبية المتقدمة المصممة لتأهيل المبدعين والمطورين لبناء مواقع إلكترونية حديثة وتجارب رقمية احترافية مدعومة بالذكاء الاصطناعي.
+
+يركز البرنامج على الدمج بين التطوير الذكي، التصميم التفاعلي، وهندسة التجارب الرقمية، بهدف تمكين المتدربين من إنشاء منتجات رقمية متكاملة بسرعة وكفاءة باستخدام أحدث أدوات الذكاء الاصطناعي.
+
+يمنح هذا المسار المشاركين تجربة عملية مباشرة تبدأ من فهم أساسيات التطوير المدعوم بالذكاء الاصطناعي، وصولًا إلى تنفيذ مشاريع متكاملة قابلة للنشر.
+
+ماذا يتضمن البرنامج؟
+AI Assisted Development
+تصميم واجهات مستقبلية احترافية
+بناء صفحات تفاعلية حديثة
+تحسين تجربة المستخدم UI/UX
+إنشاء Landing Pages ذكية
+بناء مشاريع قابلة للنشر
+دمج أدوات الذكاء الاصطناعي في Workflow التطوير
+
+هذا المسار مناسب لـ:
+
+المبتدئين في تطوير الويب
+صناع المحتوى الرقمي
+المصممين
+مطوري الواجهات
+رواد الأعمال الرقميين
+
+مدة البرنامج
+
+5 أسابيع تدريبية مكثفة
+
+النتيجة النهائية
+
+بنهاية البرنامج سيتمكن المتدرب من بناء مشروع رقمي احترافي متكامل باستخدام تقنيات الذكاء الاصطناعي الحديثة، مع فهم عملي لتطوير المنتجات الرقمية المستقبلية.
+
+"VIBE CODING ليس مجرد برنامج تدريبي، بل تجربة عملية لبناء الجيل القادم من المبدعين الرقميين."
+
+Amir AI Studio`,
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779890023/7001_vptflo.png",
     glowColor: "cyan",
-    stats: "الجمعة، ٢٢ مايو ٢٠٢٦"
+    stats: "الجمعة ١٥ مايو ٢٠٢٦"
   },
   {
     id: "pr2",
-    title: "تحديث تقني هائل لمنصة مُحسِّن الأوامر",
-    category: "تحديثات منصة الأوامر",
-    description: "يسعدنا الإعلان عن تحسين سرعة معالجة وتحليل الأوامر بنسبة 40٪ إضافية، مع دمج إمكانيات عدسات كاميرا وحسابات إضاءة سينمائية دقيقة لتصميم صور خارقة الجاذبية تلقائياً.",
-    imageUrl: "/src/assets/images/creative_hologram_1779813617961.png",
+    title: "Google تكشف عن Omni: نقلة جديدة في مستقبل الذكاء الاصطناعي التفاعلي",
+    category: "تحديثات الذكاء الاصطناعي",
+    description: "كشفت Google عن Omni، الجيل الجديد من أنظمة الذكاء الاصطناعي متعددة الوسائط، القادر على فهم النصوص، الصور، الصوت، والتفاعل الذكي بشكل أكثر تطورًا وسرعة.",
+    fullDescription: `أعلنت Google AI عن إطلاق Omni، أحد أحدث أنظمة الذكاء الاصطناعي متعددة الوسائط، والذي يمثل خطوة متقدمة نحو بناء مساعدات ذكية أكثر فهمًا للسياق، وأكثر قدرة على التفاعل اللحظي مع المستخدمين.
+
+يتميز Omni بقدرته على التعامل مع أنواع متعددة من البيانات في وقت واحد، بما يشمل:
+
+النصوص
+الصور
+الصوت
+الفيديو
+تحليل السياق التفاعلي
+
+ويمثل هذا التطور نقلة كبيرة في طريقة استخدام الذكاء الاصطناعي داخل التطبيقات الإبداعية، الإنتاجية، والتعليمية.
+
+أبرز قدرات Omni
+استجابة أسرع وأكثر دقة
+فهم أعمق للسياق
+معالجة متعددة الوسائط
+دعم التفاعل اللحظي
+تحسين workflows الإبداعية
+ماذا يعني ذلك للمبدعين؟
+
+يفتح Omni آفاقًا جديدة أمام:
+
+صناع المحتوى
+المطورين
+المصممين
+مطوري التجارب الرقمية
+
+حيث يتيح بناء حلول أكثر ذكاءً، وتطوير تجارب رقمية متقدمة تعتمد على الفهم التفاعلي العميق.
+
+رؤية Amir AI Studio
+
+في Amir AI Studio نتابع هذه التطورات باستمرار لدمج أحدث التقنيات داخل برامجنا التدريبية، لضمان حصول المتدربين على معرفة عملية تواكب مستقبل الذكاء الاصطناعي.
+
+"تقنيات مثل Omni لا تغيّر الأدوات فقط، بل تعيد تعريف مستقبل الإبداع الرقمي بالكامل."
+Amir AI Studio`,
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779890833/7002_zlctl8.png",
     glowColor: "purple",
-    stats: "الإثنين، ١٨ مايو ٢٠٢٦"
+    stats: "الأربعاء ٢٠ مايو ٢٠٢٦"
   },
   {
     id: "pr3",
-    title: "إنجاز فخري: تجاوز عتبة الـ 500 خريج مبدع",
-    category: "إنجازات ونجاحات الأكاديمية",
-    description: "نحتفل اليوم بتأهيل وتخريج أكثر من 500 متدرب متميز في العالم العربي ممن تمكنوا بالفعل من تحويل أفكارهم ومشاريعهم التوليدية إلى مصدر نجاح حقيقي ومستدام.",
-    imageUrl: "/src/assets/images/ai_art_creation_1779813598185.png",
+    title: "Claude يوسّع بنيته التحتية ويزيد حدود الاستخدام بعد تحديثات الخوادم الجديدة",
+    category: "تحديثات الذكاء الاصطناعي",
+    description: "أعلنت Claude عن تحديثات كبيرة في البنية التحتية التقنية، شملت نقلًا موسعًا للخوادم وتحسينات مباشرة على الأداء، ما أدى إلى رفع حدود الاستخدام وتحسين سرعة الاستجابة للمستخدمين.",
+    fullDescription: `شهدت منصة Anthropic Claude تحديثًا تقنيًا مهمًا بعد تنفيذ تحسينات واسعة على البنية التحتية للخوادم، تضمنت توسيع الموارد الحاسوبية ورفع كفاءة معالجة الطلبات.
+
+جاءت هذه الخطوة بالتزامن مع زيادة ملحوظة في الإقبال على استخدام Claude في مجالات:
+
+البرمجة
+بناء الأنظمة الذكية
+تحليل البيانات
+صناعة المحتوى الاحترافي
+تطوير workflows الإنتاجية
+
+وقد انعكس هذا التحديث مباشرة على تجربة المستخدم من خلال:
+
+أبرز التحسينات
+زيادة حدود الاستخدام اليومية
+استجابة أسرع للطلبات
+تقليل فترات الانتظار
+تحسين استقرار الجلسات الطويلة
+دعم أفضل للمهام المعقدة
+ماذا يعني ذلك للمستخدمين؟
+
+هذه التحديثات تمنح المستخدمين مساحة أكبر للعمل على مشاريع طويلة ومعقدة دون انقطاع، مما يجعل Claude أكثر كفاءة في بناء الأنظمة الذكية، كتابة المحتوى المتقدم، وإدارة workflows الإنتاجية.
+
+أثر ذلك على التعلم داخل Amir AI Studio
+
+في Amir AI Studio نتابع هذه التحديثات باستمرار ونعمل على تحديث محتوى Claude Mastery لضمان مواكبة أحدث الإمكانيات المتاحة داخل المنصة.
+
+تصريح مميز
+
+"كل توسعة في بنية Claude التحتية تعني فرصًا أكبر لبناء أنظمة أكثر ذكاءً وإنتاجية."
+Amir AI Studio`,
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779891774/7003_iii7ik.png",
     glowColor: "blue",
-    stats: "الأربعاء، ١٠ مايو ٢٠٢٦"
+    stats: "الأحد ١٠ مايو ٢٠٢٦"
   }
 ];
 
 export const EN_PORTFOLIO: PortfolioItem[] = [
   {
     id: "pr1",
-    title: "New Course Launched: VIBE CODING Masterclass",
+    title: "Vibe Coding Course Launched",
     category: "Course Releases",
-    description: "We have officially integrated our groundbreaking Arabic web-building via natural language AI course, guiding creators step-by-step with no prior experience.",
-    imageUrl: "/src/assets/images/futuristic_ai_hero_1779813579793.png",
+    description: "We have officially launched the specialized VIBE CODING program, the ultimate hands-on path for building modern interactive websites with AI.",
+    fullDescription: `We have officially launched the specialized VIBE CODING program! A practical, intensive course designed to guide creators and developers in crafting modern, highly interactive, and visually striking custom web applications with natural language AI.
+
+The program bridges the gap between smart development flow, interactive design, and AI-assisted UX engineering, empowering you to launch fully realized digital projects quickly and seamlessly.
+
+What's included in the curriculum?
+- AI-Assisted Front-end Development
+- Building futuristic high-end polished layouts
+- Dynamic reactive components in modern React
+- Crafting premium, interactive Landing Pages
+- Real production deployment procedures
+- Streamlining your development workflow using AI
+
+This course is perfectly suited for:
+- Absolute beginners who want to build high-grade websites
+- Digital content creators and indie hackers
+- Professional designers and UI/UX enthusiasts
+- Frontend developers wanting to augment their skill base
+- Digital entrepreneurs launching new products
+
+Course Duration: 5 Intensive Training Weeks.
+
+Resulting Outcome: By the end of this track, students will launch their own interactive custom project fully integrated and deployed, backed by modern AI productivity paradigms.
+
+"VIBE CODING is not just a course; it's a revolutionary way to build and think as a next-generation creator."
+
+Amir AI Studio`,
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779890023/7001_vptflo.png",
     glowColor: "cyan",
-    stats: "Friday, May 22, 2026"
+    stats: "Friday, May 15, 2026"
   },
   {
     id: "pr2",
-    title: "Vast Tech Upgrade for Prompt Optimizer",
-    category: "Platform Deployments",
-    description: "We are thrilled toannounce a massive 40% speed boost under high-concurrency requests, combined with cinema-lens and lens-weight models.",
-    imageUrl: "/src/assets/images/creative_hologram_1779813617961.png",
+    title: "Google Unveils Omni: A Leap Forward in Interactive AI",
+    category: "AI Updates",
+    description: "Google has announced Omni, its next-generation multimodal AI system capable of understanding text, images, audio, and highly fluid real-time interactions.",
+    fullDescription: `Google AI has announced the launch of Omni, a pioneer in multimodal AI, representing a massive step towards highly contextual digital models that interact in real time.
+
+Omni is uniquely designed to process multiple formats natively and simultaneously:
+- Natural text
+- Images and visual elements
+- High-fidelity audio
+- Video processing
+- Interactive contextual feedback
+
+This leap offers tremendous potential for creative, productive, and educational digital experiences alike.
+
+Key Omni Capabilities:
+- Supercharged response speeds
+- Deeper contextual awareness
+- Full native multimodal processing
+- Seamless real-time engagement
+- Creative workflows augmentation
+
+What does this mean for creators?
+
+Omni unlocks infinite boundaries for:
+- Digital creators and storytellers
+- Fullstack developers
+- Visual designers
+- Interactive experience builders
+
+Through Omni's deep contextual model, developers and designers can orchestrate smarter solutions and interactive applications than ever before.
+
+Amir AI Studio Vision:
+At Amir AI Studio, we continuously monitor and integrate these rapid technical shifts directly into our syllabus, ensuring all students acquire hands-on experience with cutting-edge tools.
+
+"Technologies like Omni are redefining the future of digital expression entirely."
+Amir AI Studio`,
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779890833/7002_zlctl8.png",
     glowColor: "purple",
-    stats: "Monday, May 18, 2026"
+    stats: "Wednesday, May 20, 2026"
   },
   {
     id: "pr3",
-    title: "Celebration: Over 500 Active Creative Alumni",
-    category: "Alumni Landmarks",
-    description: "Today we mark our greatest landmark of training and certifying over 500 creators across the Middle East, converting modern skills into independent paths.",
-    imageUrl: "/src/assets/images/ai_art_creation_1779813598185.png",
+    title: "Claude Expands Infrastructure and Raises Daily Usage Limits",
+    category: "AI Updates",
+    description: "Claude has announced massive technical infrastructure enhancements, including server clusters relocation and localized response optimizations, bringing higher rate limits.",
+    fullDescription: `Anthropic Claude has completed a major infrastructure upgrade across its global servers, expanding high-concurrency computing resources and task processing efficiency.
+
+This modernization step aligns with the rapid surge in Claude usage across diverse workspaces:
+- Software engineering
+- Autonomous system creation
+- High-volume data analysis
+- Professional content strategy
+- Tailored productivity workflows
+
+Key Enhancements Include:
+- Increased daily rate limits
+- Drastically faster generation speeds
+- Reduced busy-state queue delays
+- Enhanced long-context session stability
+- Robust support for complex multi-tier tasks
+
+What this means for active users:
+These server upgrades grant teams and independent creators a frictionless canvas to run long-running complex sessions, allowing them to scale AI-assisted solutions and build robust automated systems reliably.
+
+Impact on Amir AI Studio Curriculum:
+We closely monitor these updates to keep our "Claude Mastery" module perfectly aligned with Anthropic's latest cloud limits and technical scope.
+
+"Each infrastructure expansion translates immediately to greater room for building intelligent, high-impact systems."
+Amir AI Studio`,
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779891774/7003_iii7ik.png",
     glowColor: "blue",
-    stats: "Wednesday, May 10, 2026"
+    stats: "Sunday, May 10, 2026"
   }
 ];

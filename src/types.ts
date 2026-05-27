@@ -33,6 +33,7 @@ export interface PortfolioItem {
   title: string;
   category: string;
   description: string;
+  fullDescription?: string;
   imageUrl: string;
   glowColor: "cyan" | "purple" | "blue";
   stats: string;

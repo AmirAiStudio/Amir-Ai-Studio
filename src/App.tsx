@@ -90,6 +90,9 @@ export default function App() {
   // Modal State for Course Syllabus Details
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
+  // Modal State for News / Portfolio details
+  const [selectedNews, setSelectedNews] = useState<PortfolioItem | null>(null);
+
   // Prompt Library Search, Category Filter, and Copy Tool
   const [promptSearch, setPromptSearch] = useState("");
   const [selectedPromptCategory, setSelectedPromptCategory] = useState<"All" | "Personal" | "Products" | "Cards" | "Other">("All");
@@ -1062,6 +1065,83 @@ export default function App() {
             </div>
           )}
 
+          {/* ACTIVE SELECTED NEWS DETAIL MODAL INTERACTION */}
+          {selectedNews && (
+            <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+              
+              <div className="glass-card w-full max-w-xl rounded-3xl overflow-hidden relative shadow-2xl flex flex-col max-h-[85vh]">
+                
+                {/* Header glow with custom brand color */}
+                <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r ${
+                  selectedNews.glowColor === "purple" 
+                    ? "from-[#bd00ff] via-purple-500 to-indigo-500" 
+                    : selectedNews.glowColor === "blue"
+                    ? "from-blue-500 via-indigo-500 to-cyan-500"
+                    : "from-[#00f0ff] via-cyan-500 to-blue-500"
+                }`}></div>
+
+                {/* Modal close & Title */}
+                <div className="p-6 md:p-8 border-b border-white/5 flex justify-between items-start">
+                  <div className="text-right flex-grow">
+                    <span className="text-[10px] bg-cyan-950 text-cyan-300 border border-cyan-500/20 px-2 rounded-full uppercase font-bold">
+                      {selectedNews.category}
+                    </span>
+                    <h3 className="text-lg md:text-xl font-brand font-black text-white tracking-wide mt-2">
+                      {selectedNews.title}
+                    </h3>
+                  </div>
+                  <button 
+                    onClick={() => setSelectedNews(null)}
+                    className="p-1 px-3 bg-slate-900 duration-200 hover:bg-slate-800 rounded-full text-xs text-slate-400 hover:text-white transition-all cursor-pointer ml-4"
+                  >
+                    ✕ {t.modalClose}
+                  </button>
+                </div>
+
+                {/* Modal Scrollable Core content */}
+                <div className="p-6 md:p-8 overflow-y-auto flex-1 space-y-6 text-right" dir={isArabic ? "rtl" : "ltr"}>
+                  {/* Aspect image */}
+                  <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-900 bg-slate-950">
+                    <img 
+                      src={selectedNews.imageUrl} 
+                      alt={selectedNews.title} 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+
+                  {/* Date details */}
+                  <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+                    <Clock className="w-3.5 h-3.5 text-[#00f0ff]" />
+                    <span className="text-slate-500 ml-1">{isArabic ? "تاريخ النشر:" : "Published:"}</span>
+                    <span className="text-white font-bold">{selectedNews.stats}</span>
+                  </div>
+
+                  {/* Body description */}
+                  <div className="space-y-2">
+                    <h4 className="text-xs font-mono uppercase tracking-widest text-slate-500">
+                      {isArabic ? "تفاصيل الخبر والتحديث" : "NEWS DETAILS & OVERVIEW"}
+                    </h4>
+                    <p className="text-[13px] text-slate-300 leading-relaxed font-sans mt-2 whitespace-pre-wrap pre-formatted">
+                      {selectedNews.fullDescription || selectedNews.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Footer close button */}
+                <div className="p-6 border-t border-white/5 bg-slate-950 flex justify-end">
+                  <button 
+                    onClick={() => setSelectedNews(null)}
+                    className="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-[#00f0ff]/30 text-xs font-mono font-bold tracking-wider text-slate-300 hover:text-[#00f0ff] rounded-xl transition-all cursor-pointer"
+                  >
+                    {isArabic ? "إغلاق التفاصيل" : "Close Details"}
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          )}
+
         {/* SECTION 4: LIVE PROMPT OPTIMIZER & INSPIRATIONAL PROMPT LIBRARY */}
         {activeTab === "library" && (
           <motion.div
@@ -1261,10 +1341,16 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Footer specs details for models */}
-                <div className="px-5 pb-5 pt-3 border-t border-slate-900 flex items-center justify-between text-[10px] font-mono text-slate-500">
-                  <span className="text-[#00f0ff] font-bold">{isArabic ? "تاريخ النشر" : "PUBLISHED"}</span>
-                  <span className="text-slate-400 font-bold">{item.stats}</span>
+                {/* Footer specs details for models with Explore button */}
+                <div className="px-5 pb-5 pt-3 border-t border-slate-900 flex items-center justify-between">
+                  <span className="text-[10px] font-mono text-slate-500 font-bold">{item.stats}</span>
+                  <button 
+                    onClick={() => setSelectedNews(item)}
+                    className="px-4 py-2 bg-[#00f0ff]/10 hover:bg-[#00f0ff]/20 border border-[#00f0ff]/20 hover:border-[#00f0ff]/50 text-xs font-brand font-black text-[#00f0ff] rounded-xl transition-all duration-300 shadow-lg active:scale-95 cursor-pointer flex items-center gap-1.5"
+                  >
+                    <span>{isArabic ? "استكشف الخبر" : "Explore News"}</span>
+                    {isArabic ? <ChevronLeft className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
+                  </button>
                 </div>
 
               </div>

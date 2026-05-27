@@ -24,7 +24,9 @@ import {
   Sun,
   Moon,
   Menu,
-  X
+  X,
+  User,
+  Lock
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Course, PromptItem, PortfolioItem, OptimizeResponse } from "./types";
@@ -95,8 +97,32 @@ export default function App() {
 
   // Prompt Library Search, Category Filter, and Copy Tool
   const [promptSearch, setPromptSearch] = useState("");
-  const [selectedPromptCategory, setSelectedPromptCategory] = useState<"All" | "Personal" | "Products" | "Cards" | "Other">("All");
+  const [selectedPromptCategory, setSelectedPromptCategory] = useState<"All" | "Personal" | "Products" | "Cards" | "Other" | "Library">("All");
   const [copiedPromptId, setCopiedPromptId] = useState<string | null>(null);
+
+  // Subscriber Authentication Modal States for Library
+  const [showSubscriberLogin, setShowSubscriberLogin] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [previousPromptCategory, setPreviousPromptCategory] = useState<"All" | "Personal" | "Products" | "Cards" | "Other" | "Library">("All");
+  const [usernameInput, setUsernameInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [subscriberLoginError, setSubscriberLoginError] = useState("");
+
+  const handleCategorySelection = (catName: "All" | "Personal" | "Products" | "Cards" | "Other" | "Library") => {
+    if (catName === "Library") {
+      if (isSubscribed) {
+        setSelectedPromptCategory("Library");
+      } else {
+        setPreviousPromptCategory(selectedPromptCategory);
+        setShowSubscriberLogin(true);
+        setUsernameInput("");
+        setPasswordInput("");
+        setSubscriberLoginError("");
+      }
+    } else {
+      setSelectedPromptCategory(catName);
+    }
+  };
 
   // Live Prompt Optimizer State 
   const [userPromptToOptimize, setUserPromptToOptimize] = useState("");
@@ -586,17 +612,7 @@ export default function App() {
               </button>
             </div>
 
-            {/* Server Status Live Diagnostics Tick */}
-            <div className="mt-2 flex items-center space-x-2 text-xs font-mono text-slate-500">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>
-                {isArabic ? "حالة النظام:" : "SYSTEMS:"}{" "}
-                <span className="text-[#00f0ff] font-bold uppercase">{isArabic ? "نشط ومستقر" : "ONLINE & CALIBRATED"}</span>
-              </span>
-            </div>
+
 
           </div>
 
@@ -633,7 +649,7 @@ export default function App() {
                   >
                     {/* Course Thumbnail placeholder styled for Command */}
                     <div className="relative rounded-2xl overflow-hidden aspect-video border border-slate-900 group cursor-pointer" onClick={() => {
-                      setSelectedPromptCategory(currentRandomPrompt?.category || "All");
+                      handleCategorySelection(currentRandomPrompt?.category || "All");
                       scrollToSection("library-section", "library");
                     }}>
                       <img 
@@ -658,6 +674,8 @@ export default function App() {
                             ? (isArabic ? "منتجات" : "Products") 
                             : currentRandomPrompt?.category === "Cards" 
                             ? (isArabic ? "كروت" : "Cards") 
+                            : currentRandomPrompt?.category === "Library"
+                            ? (isArabic ? "المكتبة" : "Library")
                             : (isArabic ? "أخرى" : "Other")}
                         </span>
                       </div>
@@ -672,7 +690,7 @@ export default function App() {
                     {/* Click Trigger */}
                     <button 
                       onClick={() => {
-                        setSelectedPromptCategory(currentRandomPrompt?.category || "All");
+                        handleCategorySelection(currentRandomPrompt?.category || "All");
                         scrollToSection("library-section", "library");
                       }}
                       className="w-full py-3 bg-slate-950 hover:bg-slate-900 border border-slate-900 hover:border-[#00f0ff]/30 text-xs font-mono font-bold tracking-wider text-slate-300 hover:text-[#00f0ff] rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
@@ -1142,6 +1160,162 @@ export default function App() {
             </div>
           )}
 
+          {/* SUBSCRIBER LOGIN MODAL */}
+          <AnimatePresence>
+            {showSubscriberLogin && (
+              <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 15 }}
+                  transition={{ duration: 0.3 }}
+                  className="glass-card w-full max-w-sm rounded-3xl overflow-hidden relative shadow-2xl flex flex-col border border-white/10"
+                >
+                  {/* Neon header glow line */}
+                  <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-purple-500 via-[#bd00ff] to-[#00f0ff]"></div>
+
+                  {/* Header */}
+                  <div className="p-5 border-b border-white/5 flex justify-between items-center bg-slate-950/50">
+                    <div className="text-right w-full">
+                      <span className="text-[10px] uppercase font-mono tracking-widest text-[#00f0ff] font-bold animate-pulse">
+                        {isArabic ? "منصة الأوامر" : "COMMANDS SYSTEM"}
+                      </span>
+                      <h3 className="text-lg font-brand font-bold text-white tracking-wide mt-1">
+                        {isArabic ? "خاص للمشتركين" : "Exclusive for Subscribers"}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Body Inputs */}
+                  <div className="p-5 space-y-4 text-right" dir={isArabic ? "rtl" : "ltr"}>
+                    <p className="text-xs text-slate-400 font-sans leading-relaxed text-right md:text-justify">
+                      {isArabic 
+                        ? "هذا القسم مخصص وحصري لمشتركي كورسات أكاديمية أمير للذكاء الاصطناعي. الرجاء إدخال بيانات الاعتماد الخاصة بك للوصول." 
+                        : "This section is exclusive for enrolled subscribers of Amir AI Academy courses. Please enter your credentials to gain access."}
+                    </p>
+
+                    {subscriberLoginError && (
+                      <div className="p-3 bg-red-950/40 text-red-400 border border-red-900/40 rounded-xl text-xs flex items-center justify-center gap-2 font-sans font-bold text-center">
+                        <span>{subscriberLoginError}</span>
+                      </div>
+                    )}
+
+                    <div className="space-y-3">
+                      {/* Username */}
+                      <div>
+                        <label className={`block text-[11px] text-slate-400 font-mono mb-1.5 font-bold ${isArabic ? "text-right" : "text-left"}`}>
+                          {isArabic ? "اسم المستخدم" : "Username"}
+                        </label>
+                        <div className="relative">
+                          {isArabic ? (
+                            <>
+                              <User className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                              <input
+                                type="text"
+                                value={usernameInput}
+                                onChange={(e) => {
+                                  setUsernameInput(e.target.value);
+                                  setSubscriberLoginError("");
+                                }}
+                                placeholder="أدخل اسم المستخدم..."
+                                className="w-full bg-[#050711] text-xs text-slate-100 placeholder:text-slate-600 rounded-xl pr-10 pl-4 py-3 border border-slate-905 focus:outline-none focus:border-[#00f0ff]/50 transition-all font-sans text-right"
+                              />
+                            </>
+                          ) : (
+                            <>
+                              <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                              <input
+                                type="text"
+                                value={usernameInput}
+                                onChange={(e) => {
+                                  setUsernameInput(e.target.value);
+                                  setSubscriberLoginError("");
+                                }}
+                                placeholder="Enter username..."
+                                className="w-full bg-[#050711] text-xs text-slate-100 placeholder:text-slate-600 rounded-xl pl-10 pr-4 py-3 border border-slate-905 focus:outline-none focus:border-[#00f0ff]/50 transition-all font-sans text-left"
+                              />
+                            </>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Password */}
+                      <div>
+                        <label className={`block text-[11px] text-slate-400 font-mono mb-1.5 font-bold ${isArabic ? "text-right" : "text-left"}`}>
+                          {isArabic ? "كلمة السر" : "Password"}
+                        </label>
+                        <div className="relative">
+                          {isArabic ? (
+                            <>
+                              <Lock className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                              <input
+                                type="password"
+                                value={passwordInput}
+                                onChange={(e) => {
+                                  setPasswordInput(e.target.value);
+                                  setSubscriberLoginError("");
+                                }}
+                                placeholder="أدخل كلمة السر..."
+                                className="w-full bg-[#050711] text-xs text-slate-100 placeholder:text-slate-600 rounded-xl pr-10 pl-4 py-3 border border-slate-905 focus:outline-none focus:border-[#bd00ff]/50 transition-all font-sans text-right"
+                              />
+                            </>
+                          ) : (
+                            <>
+                              <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                              <input
+                                type="password"
+                                value={passwordInput}
+                                onChange={(e) => {
+                                  setPasswordInput(e.target.value);
+                                  setSubscriberLoginError("");
+                                }}
+                                placeholder="Enter password..."
+                                className="w-full bg-[#050711] text-xs text-slate-100 placeholder:text-slate-600 rounded-xl pl-10 pr-4 py-3 border border-slate-905 focus:outline-none focus:border-[#bd00ff]/50 transition-all font-sans text-left"
+                              />
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Footer - "وزرارين صغيرين دخول وخروج" */}
+                  <div className="p-4 border-t border-white/5 bg-slate-950 flex items-center justify-between gap-3">
+                    <button
+                      onClick={() => {
+                        setShowSubscriberLogin(false);
+                        setSelectedPromptCategory(previousPromptCategory);
+                      }}
+                      className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-xs font-mono font-bold text-slate-400 hover:text-white rounded-lg transition-all border border-white/5 cursor-pointer flex-1 text-center"
+                    >
+                      {isArabic ? "خروج" : "Exit"}
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        if (!usernameInput.trim() || !passwordInput.trim()) {
+                          setSubscriberLoginError(
+                            isArabic 
+                              ? "برجاء كتابة اسم المستخدم وكلمة السر" 
+                              : "Please enter both username and password"
+                          );
+                          return;
+                        }
+                        // Successful login
+                        setIsSubscribed(true);
+                        setShowSubscriberLogin(false);
+                        setSelectedPromptCategory("Library");
+                      }}
+                      className="px-3 py-1.5 bg-gradient-to-r from-[#bd00ff] to-[#00f0ff] hover:from-[#d533ff] hover:to-[#33f3ff] text-slate-950 font-sans font-bold text-xs rounded-lg transition-all cursor-pointer shadow-lg shadow-purple-950/25 flex-1 text-center"
+                    >
+                      {isArabic ? "دخول" : "دخول"}
+                    </button>
+                  </div>
+                </motion.div>
+              </div>
+            )}
+          </AnimatePresence>
+
         {/* SECTION 4: LIVE PROMPT OPTIMIZER & INSPIRATIONAL PROMPT LIBRARY */}
         {activeTab === "library" && (
           <motion.div
@@ -1163,7 +1337,7 @@ export default function App() {
                 {t.libraryTitle}
               </h2>
             </div>
-            <p className="text-slate-400 text-sm max-w-sm mt-4 md:mt-0 leading-relaxed font-sans">
+            <p className="text-slate-400 text-sm max-w-sm mt-4 md:mt-0 leading-relaxed font-sans text-right">
               {t.librarySub}
             </p>
           </div>
@@ -1184,23 +1358,40 @@ export default function App() {
             </div>
 
             {/* Nav button filters */}
-            <div className="flex flex-wrap gap-1.5 items-center">
-              {(["All", "Personal", "Products", "Cards", "Other"] as const).map((catName) => (
+            <div className="flex flex-wrap gap-3 items-center">
+              {/* Blocks of standard categories */}
+              <div className="flex flex-wrap gap-1.5 items-center p-1 bg-[#050711]/60 rounded-xl border border-slate-900">
+                {(["All", "Personal", "Products", "Cards", "Other"] as const).map((catName) => (
+                  <button
+                    key={catName}
+                    onClick={() => handleCategorySelection(catName)}
+                    className={`px-4 py-2 rounded-lg text-xs font-bold font-mono tracking-wider transition-all duration-200 cursor-pointer ${
+                      selectedPromptCategory === catName 
+                        ? "bg-slate-900 text-[#00f0ff] border border-slate-800"
+                        : "text-slate-400 hover:text-white hover:bg-slate-900/50"
+                    }`}
+                  >
+                    {isArabic 
+                      ? (catName === "All" ? "الكل" : catName === "Personal" ? "شخصية" : catName === "Products" ? "منتجات" : catName === "Cards" ? "كروت" : "أخرى")
+                      : catName
+                    }
+                  </button>
+                ))}
+              </div>
+
+              {/* Standalone Block for Library */}
+              <div className="flex items-center p-1 bg-[#050711]/60 rounded-xl border border-slate-900">
                 <button
-                  key={catName}
-                  onClick={() => setSelectedPromptCategory(catName)}
-                  className={`px-4 py-2 rounded-lg text-xs font-bold font-mono tracking-wider transition-all duration-200 cursor-pointer ${
-                    selectedPromptCategory === catName 
+                  onClick={() => handleCategorySelection("Library")}
+                  className={`px-4 py-2 rounded-lg text-xs font-bold font-mono tracking-wider transition-all duration-200 cursor-pointer min-w-[70px] ${
+                    selectedPromptCategory === "Library" 
                       ? "bg-slate-900 text-[#00f0ff] border border-slate-800"
                       : "text-slate-400 hover:text-white hover:bg-slate-900/50"
                   }`}
                 >
-                  {isArabic 
-                    ? (catName === "All" ? "الكل" : catName === "Personal" ? "شخصية" : catName === "Products" ? "منتجات" : catName === "Cards" ? "كروت" : "أخرى")
-                    : catName
-                  }
+                  {isArabic ? "المكتبة" : "Library"}
                 </button>
-              ))}
+              </div>
             </div>
 
           </div>
@@ -1219,7 +1410,7 @@ export default function App() {
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-[9px] font-mono bg-purple-950/40 text-purple-300 font-bold px-2 py-0.5 rounded border border-purple-500/20">
                         {isArabic 
-                          ? (item.category === "Personal" ? "شخصية" : item.category === "Products" ? "منتجات" : item.category === "Cards" ? "كروت" : "أخرى")
+                          ? (item.category === "Personal" ? "شخصية" : item.category === "Products" ? "منتجات" : item.category === "Cards" ? "كروت" : item.category === "Library" ? "المكتبة" : "أخرى")
                           : item.category
                         }
                       </span>

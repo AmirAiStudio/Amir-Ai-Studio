@@ -20,7 +20,7 @@ export interface Course {
 export interface PromptItem {
   id: string;
   title: string;
-  category: "Personal" | "Products" | "Cards" | "Other";
+  category: "Personal" | "Products" | "Cards" | "Other" | "Library";
   prompt: string;
   description: string;
   tags: string[];

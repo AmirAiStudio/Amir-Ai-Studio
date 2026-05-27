@@ -165,7 +165,7 @@ export default function TestimonialsSlider({ isArabic, isDarkMode }: Testimonial
       <div className="text-center mb-8 flex flex-col items-center">
         <div className="flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full w-fit mb-3">
           <Sparkles className="w-3.5 h-3.5 text-[#bd00ff]" />
-          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#bd00ff] mr-1 ml-1">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-white mr-1 ml-1">
             {isArabic ? "آراء نخبة خريجينا" : "PROUD ALUMNI COMMENDATIONS"}
           </span>
         </div>

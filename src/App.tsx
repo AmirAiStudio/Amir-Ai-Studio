@@ -61,7 +61,7 @@ export default function App() {
 
   // Prompt Library Search, Category Filter, and Copy Tool
   const [promptSearch, setPromptSearch] = useState("");
-  const [selectedPromptCategory, setSelectedPromptCategory] = useState<"All" | "Image" | "Video" | "Marketing" | "Design">("All");
+  const [selectedPromptCategory, setSelectedPromptCategory] = useState<"All" | "Personal" | "Products" | "Cards" | "Other">("All");
   const [copiedPromptId, setCopiedPromptId] = useState<string | null>(null);
 
   // Live Prompt Optimizer State 
@@ -277,8 +277,13 @@ export default function App() {
             onClick={() => scrollToSection("home-hero", "home")}
           >
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-tr from-cyan-400 via-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-all">
-                <span className="text-white font-brand font-black text-xl italic tracking-tight">A</span>
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center bg-slate-950 border border-slate-900 shadow-lg shadow-cyan-500/15 group-hover:scale-105 transition-all">
+                <img 
+                  src="https://res.cloudinary.com/deuwh0ysg/image/upload/v1779877674/Logo_nrj7cq.png" 
+                  alt="Amir AI Studio" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -984,7 +989,7 @@ export default function App() {
 
             {/* Nav button filters */}
             <div className="flex flex-wrap gap-1.5 items-center">
-              {(["All", "Image", "Video", "Marketing", "Design"] as const).map((catName) => (
+              {(["All", "Personal", "Products", "Cards", "Other"] as const).map((catName) => (
                 <button
                   key={catName}
                   onClick={() => setSelectedPromptCategory(catName)}
@@ -995,7 +1000,7 @@ export default function App() {
                   }`}
                 >
                   {isArabic 
-                    ? (catName === "All" ? "الكل" : catName === "Image" ? "الصور" : catName === "Video" ? "الفيديو" : catName === "Marketing" ? "التسويق" : "التصميم")
+                    ? (catName === "All" ? "الكل" : catName === "Personal" ? "شخصية" : catName === "Products" ? "منتجات" : catName === "Cards" ? "كروت" : "أخرى")
                     : catName
                   }
                 </button>
@@ -1018,7 +1023,7 @@ export default function App() {
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-[9px] font-mono bg-purple-950/40 text-purple-300 font-bold px-2 py-0.5 rounded border border-purple-500/20">
                         {isArabic 
-                          ? (item.category === "Image" ? "نموذج صور" : item.category === "Video" ? "نموذج فيديو" : item.category === "Marketing" ? "نموذج تسويق" : "نموذج تصميم")
+                          ? (item.category === "Personal" ? "شخصية" : item.category === "Products" ? "منتجات" : item.category === "Cards" ? "كروت" : "أخرى")
                           : item.category
                         }
                       </span>

@@ -143,14 +143,14 @@ export const AR_CONTENT: StudioContent = {
 export const EN_CONTENT: StudioContent = {
   navHome: "Academy",
   navCourses: "Courses",
-  navLibrary: "Prompt Hub",
+  navLibrary: "Prompts Library",
   navShowcase: "Latest News",
   navContact: "Contact",
   heroHeadline: "ELEVATE YOUR",
   heroHighlight: "CREATIVE REVOLUTION",
   heroSub: "Amir AI Studio represents the supreme nexus of technical wisdom and visual craftsmanship. We empower artists, creators, and business leaders with futuristic generative capabilities to translate sheer imagination into commercial realities.",
   exploreBtn: "Explore AI Courses",
-  viewPromptBtn: "View Prompt Library",
+  viewPromptBtn: "View Prompts Library",
   activeInquiries: "Active Inquiries Today",
   liveToday: "31 Live Today",
   sysStatus: "System Status",
@@ -438,7 +438,7 @@ export const AR_PROMPTS: PromptItem[] = [
   {
     id: "p1",
     title: "عميل سايبربانك مستقبلي مذهل",
-    category: "Image",
+    category: "Personal",
     prompt: "A cinematic cinematic wide shot of an elite cyberpunk operative wearing modular gear, looking towards a gargantuan purple neural network holographic system, volumetric electric neon blue mist, photorealistic face, hyper-detailed, shot on 85mm anamorphic lens, beautiful ambient light reflections, 8k resolution --ar 16:9 --style raw",
     description: "أمر نصي معد خصيصاً في Midjourney لمحاكاة تفاصيل الوجوه السينمائية، والعمق الحركي الممزوج بوهج النيون الباهر.",
     tags: ["سايبربانك", "سينمائي", "بورتريه", "ميدجورني"],
@@ -448,7 +448,7 @@ export const AR_PROMPTS: PromptItem[] = [
   {
     id: "p2",
     title: "لوحة تحكم وتطبيق مستقبلي ناعم زجاجي",
-    category: "Design",
+    category: "Cards",
     prompt: "Ultra-premium futuristic dark application interface mockup, glassmorphic layout cards, deep charcoal background, subtle vibrant neon cyan glowing borders, professional sans-serif typography, elegant statistical charts, high-end tech corporate dashboard vibe, pristine aesthetic presentation --v 6.0",
     description: "يولد هذا الكود واجهات مستخدم مذهلة فائقة التفاصيل وبلمسات زجاجية ونوافذ نيونية تلهم بناء مشاريعك وموقعك الإلكتروني.",
     tags: ["واجهات مستخدم", "تأثير زجاجي", "إلهام", "فيجما"],
@@ -458,7 +458,7 @@ export const AR_PROMPTS: PromptItem[] = [
   {
     id: "p3",
     title: "تفتح زهرة أوركيد مضيئة بخاصية التايم لابس",
-    category: "Video",
+    category: "Other",
     prompt: "A close-up cinematic time-lapse video of an crystalline orchid blooming under alien solar rays, petals constructed of fluid light and electric purple fibers, camera gently zooms out, bioluminescent dust particles swirling around, ultra high-speed camera, 60fps, 4k resolution, incredibly detailed texture morphing",
     description: "مثالي جداً للاستخدام في منصات توليد الفيديو مثل Runway Gen-3 أو Sora للحصول على حركات طبيعية وتMorphing مذهل.",
     tags: ["حركة", "تايم لابس", "رنواي", "سورا"],
@@ -468,7 +468,7 @@ export const AR_PROMPTS: PromptItem[] = [
   {
     id: "p4",
     title: "صيغة الكتابة التسويقية لزيادة التحويلات",
-    category: "Marketing",
+    category: "Other",
     prompt: "Act as an elite conversion copywriter. I am launching a services called '[Insert Service]'. Write a high-converting landing page headline using the standard 'Before-After-Bridge' framework. Provide three powerful visual bullet points focusing on active relief of pain points, followed by a brief, urgent and premium call-to-action sentence.",
     description: "أمر مهندس خصيصاً لمطالبة الروبوتات الذكية مثل Gemini أو GPT-4 بصياغة نصوص وعناوين إعلانية فاخرة ترفع نسبة المبيعات.",
     tags: ["كتابة إعلانية", "صفحة هبوط", "جيميني", "إطار عمل"],
@@ -478,7 +478,7 @@ export const AR_PROMPTS: PromptItem[] = [
   {
     id: "p5",
     title: "سيرفر بيولوجي مضيء للكمبيوتر الكمومي",
-    category: "Image",
+    category: "Products",
     prompt: "Macro photography of an advanced biological supercomputer core, neon blue neurons pulse with liquid lavender optic data, glowing synthetic glass cooling tubes, deep obsidian dark case, hyper detailed depth of field, metallic copper wiring, 3D render feel mixed with high-end photography",
     description: "يصنع هذا الأمر لقطات ماكرو مدهشة لأجهزة متطورة وسيرفرات ذات تفاصيل علمية وسينمائية بارزة.",
     tags: ["رندرة 3D", "تفاصيل علمية", "مفهوم فني"],
@@ -488,7 +488,7 @@ export const AR_PROMPTS: PromptItem[] = [
   {
     id: "p6",
     title: "سفينة فضائية أمام حلقة كوكب المشتري",
-    category: "Video",
+    category: "Other",
     prompt: "The camera slowly pulls back from a cozy wooden cabin suspended outside an orbital ring in the clouds of Jupiter, glowing electric orange light pouring from the cabin windows, ambient cosmic dust floating, massive gas giant storm spinning silently in background, 8k resolution, cinematic atmosphere",
     description: "مصمم لتوليد فيديو بطيء وهادئ يصف تراجع الكاميرا مع الحفاظ الكامل على دقة السحب وتوهج المركبات.",
     tags: ["تأثير الفضاء", "حركة فيديو", "لوما", "كلينغ"],
@@ -501,7 +501,7 @@ export const EN_PROMPTS: PromptItem[] = [
   {
     id: "p1",
     title: "Cinematic Cyberpunk Operative",
-    category: "Image",
+    category: "Personal",
     prompt: "A cinematic wide shot of an elite cyberpunk operative wearing modular gear, looking towards a gargantuan purple neural network holographic system, volumetric electric neon blue mist, photorealistic face, hyper-detailed, shot on 85mm anamorphic lens, beautiful ambient light reflections, 8k resolution --ar 16:9 --style raw",
     description: "Meticulously optimized Midjourney prompt for photorealistic character shots with stunning neon reflections.",
     tags: ["cyberpunk", "cinematic", "portrait", "midjourney"],
@@ -511,7 +511,7 @@ export const EN_PROMPTS: PromptItem[] = [
   {
     id: "p2",
     title: "Glassmorphic Tech Dashboard Mockup",
-    category: "Design",
+    category: "Cards",
     prompt: "Ultra-premium futuristic dark application interface mockup, glassmorphic layout cards, deep charcoal background, subtle vibrant neon cyan glowing borders, professional sans-serif typography, elegant statistical charts, high-end tech corporate dashboard vibe, pristine aesthetic presentation --v 6.0",
     description: "Generates ultra-clean layouts with glassmorphic depth to inspire digital web portals.",
     tags: ["ui-ux", "glassmorphism", "inspiration", "figma"],
@@ -521,7 +521,7 @@ export const EN_PROMPTS: PromptItem[] = [
   {
     id: "p3",
     title: "Bioluminescent Flower Timelapse",
-    category: "Video",
+    category: "Other",
     prompt: "A close-up cinematic time-lapse video of an crystalline orchid blooming under alien solar rays, petals constructed of fluid light and electric purple fibers, camera gently zooms out, bioluminescent dust particles swirling around, ultra high-speed camera, 60fps, 4k resolution, incredibly detailed texture morphing",
     description: "Perfect for Runway Gen-3 or Sora to generate fluid organic growth and morphing actions.",
     tags: ["motion", "timelapse", "runway", "sora"],
@@ -531,7 +531,7 @@ export const EN_PROMPTS: PromptItem[] = [
   {
     id: "p4",
     title: "Before-After-Bridge Sales Formula",
-    category: "Marketing",
+    category: "Other",
     prompt: "Act as an elite conversion copywriter. I am launching a services called '[Insert Service]'. Write a high-converting landing page headline using the standard 'Before-After-Bridge' framework. Provide three powerful visual bullet points focusing on active relief of pain points, followed by a brief, urgent and premium call-to-action sentence.",
     description: "Engineered prompt to guide LLMs like Gemini or GPT-4 in writing persuasive high-converting copy.",
     tags: ["copywriting", "landing-page", "gemini", "framework"],
@@ -541,7 +541,7 @@ export const EN_PROMPTS: PromptItem[] = [
   {
     id: "p5",
     title: "Quantum Supercomputer Core",
-    category: "Image",
+    category: "Products",
     prompt: "Macro photography of an advanced biological supercomputer core, neon blue neurons pulse with liquid lavender optic data, glowing synthetic glass cooling tubes, deep obsidian dark case, hyper detailed depth of field, metallic copper wiring, 3D render feel mixed with high-end photography",
     description: "Generates stunning tech-concept close-ups with professional depth of field.",
     tags: ["3d-render", "tech-details", "concept-art"],
@@ -551,7 +551,7 @@ export const EN_PROMPTS: PromptItem[] = [
   {
     id: "p6",
     title: "Jupiter Low-Orbit Flight",
-    category: "Video",
+    category: "Other",
     prompt: "The camera slowly pulls back from a cozy wooden cabin suspended outside an orbital ring in the clouds of Jupiter, glowing electric orange light pouring from the cabin windows, ambient cosmic dust floating, massive gas giant storm spinning silently in background, 8k resolution, cinematic atmosphere",
     description: "Perfect prompt for smooth galactic panning camera angles.",
     tags: ["sci-fi", "panning", "luma", "kling"],

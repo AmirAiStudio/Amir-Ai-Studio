@@ -437,126 +437,186 @@ export const EN_COURSES: Course[] = [
 export const AR_PROMPTS: PromptItem[] = [
   {
     id: "p1",
-    title: "عميل سايبربانك مستقبلي مذهل",
+    title: "صورة بورتريه أبيض وأسود",
     category: "Personal",
-    prompt: "A cinematic cinematic wide shot of an elite cyberpunk operative wearing modular gear, looking towards a gargantuan purple neural network holographic system, volumetric electric neon blue mist, photorealistic face, hyper-detailed, shot on 85mm anamorphic lens, beautiful ambient light reflections, 8k resolution --ar 16:9 --style raw",
-    description: "أمر نصي معد خصيصاً في Midjourney لمحاكاة تفاصيل الوجوه السينمائية، والعمق الحركي الممزوج بوهج النيون الباهر.",
-    tags: ["سايبربانك", "سينمائي", "بورتريه", "ميدجورني"],
+    prompt: "Enhance this photo into a vibrant aesthetic scene. Keep 100% of the man's real face exactly as it is (do not modify facial features) without any alteration. As a dramatic, ultra-realistic close-up in black and white with high-contrast cinematic lighting from the side, highlighting the contours of his face and beard, casting deep shadows. He wears aviator, reflective sunglasses. He gazes confidently upward into a dark void. The sunglasses reflect a city's towering skyline. The atmosphere is mysterious with a minimalist black background. Details in 4K.",
+    description: "أمر نصي معد خصيصاً في Gemini لمحاكاة تفاصيل الوجوه والحفاظ على الملامح بنسبة كبيرة.",
+    tags: ["بورتريه", "أبيض وأسود", "جيميني", "سينمائي"],
     difficulty: "Advanced",
-    imageUrl: "/src/assets/images/futuristic_ai_hero_1779813579793.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779878821/001_vpveej.png"
   },
   {
     id: "p2",
-    title: "لوحة تحكم وتطبيق مستقبلي ناعم زجاجي",
+    title: "كارت معايدة مرح لعيد الأضحى",
     category: "Cards",
-    prompt: "Ultra-premium futuristic dark application interface mockup, glassmorphic layout cards, deep charcoal background, subtle vibrant neon cyan glowing borders, professional sans-serif typography, elegant statistical charts, high-end tech corporate dashboard vibe, pristine aesthetic presentation --v 6.0",
-    description: "يولد هذا الكود واجهات مستخدم مذهلة فائقة التفاصيل وبلمسات زجاجية ونوافذ نيونية تلهم بناء مشاريعك وموقعك الإلكتروني.",
-    tags: ["واجهات مستخدم", "تأثير زجاجي", "إلهام", "فيجما"],
+    prompt: `A highly creative premium 3D cartoon-style inspired by modern animated movie aesthetics and playful social-media selfie culture. Create a funny group selfie moment featuring multiple Eid sacrificial animals together on a studio like low saturated red background. We can fully see the characters, full body.
+The main focus should be a cheerful oversized person from the uploaded reference image, keep 100% of his real face exactly as it is (do not modify facial features) without any alteration. In casual modern outfit, holding a modern smartphone in one hand while taking a selfie. oversized head and caricatured body proportions, ,energetic dominant personality. The person should stand slightly in front like the group leader taking the selfie. Around the person, several expressive Eid animals pose together naturally: a playful goat, a fluffy dumba/sheep, a cute big cow, and a tall camel.
+All animals should have exaggerated emotional cartoon expressions, wide smiles, funny poses, and energetic body language as if squeezing together for a joyful Eid selfie moment. The person holding the phone should have the strongest presence in the frame with dynamic selfie angle composition. Some animals can lean toward the camera, raise hooves, smile dramatically, or make funny selfie reactions for a premium comedic storytelling feel.
+Add a huge “عيد مبارك” text in a bubbly white font. Pixar-style premium 3D rendering, ultra detailed fur textures, smooth cinematic shading, oversized expressive eyes, realistic horn textures, soft rounded shapes, luxury CGI animation quality, modern conceptual Eid campaign aesthetic. no environment, no extra props, only soft grounded shadows beneath the characters for depth.
+Ultra high quality, masterpiece rendering, crisp edges, cinematic studio lighting, luxury animated poster style, ultra HD, no watermark.`,
+    description: "أمر نصي معد خصيصاً في Gemini لمحاكاة تفاصيل الصور الشخصية وتحويلها لتصميم ملائم.",
+    tags: ["كروت", "عيد الأضحى", "جيميني", "ثلاثي الأبعاد"],
     difficulty: "Expert",
-    imageUrl: "/src/assets/images/creative_hologram_1779813617961.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779880797/3001_hnfilr.png"
   },
   {
     id: "p3",
-    title: "تفتح زهرة أوركيد مضيئة بخاصية التايم لابس",
+    title: "اسم المشروع لتصميم لوجو",
     category: "Other",
-    prompt: "A close-up cinematic time-lapse video of an crystalline orchid blooming under alien solar rays, petals constructed of fluid light and electric purple fibers, camera gently zooms out, bioluminescent dust particles swirling around, ultra high-speed camera, 60fps, 4k resolution, incredibly detailed texture morphing",
-    description: "مثالي جداً للاستخدام في منصات توليد الفيديو مثل Runway Gen-3 أو Sora للحصول على حركات طبيعية وتMorphing مذهل.",
-    tags: ["حركة", "تايم لابس", "رنواي", "سورا"],
+    prompt: `Design a modern, professional logo for a (اكتب هنا نوع النشاط) named "اسم مشروعك بالانجليزي". The design should be simple, distinctive, and inspired by modern design trends of 2026.
+Create a clean geometric monoline icon inspired by the meaning of the name or its letters, with smart use of negative space, balanced composition, and strong contemporary typography. The logo system should consist of an icon + the brand name.
+The color palette should be automatically chosen to suit the nature of the project and its brand identity.
+Style: flat vector design, suitable for full brand identity use including signage, packaging, and digital platforms. Central composition, clean background, elegant, timeless, and highly recognizable logo.
+The logo name must appear in both English and Arabic in a dynamic adaptive layout that fits the logo composition. The Arabic equivalent should appear in its designated place: (اسم مشروعك بالعربي).
+The logo must contain only one main visual element, with no extra elements, ornaments, stars, or surrounding effects.
+Vertical composition with a 3:4 aspect ratio.`,
+    description: "أمر نصي معد خصيصاً في Gemini لتحويل اسم مشروعك ونشاطه لتصميم لوجو بسيط وابداعي.",
+    tags: ["لوجو", "هوية بصرية", "جيميني", "تصميم"],
     difficulty: "Advanced",
-    imageUrl: "/src/assets/images/ai_art_creation_1779813598185.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779881311/4001_mua4cu.jpg"
   },
   {
     id: "p4",
-    title: "صيغة الكتابة التسويقية لزيادة التحويلات",
+    title: "صورة بتصميم مميز لأسمك",
     category: "Other",
-    prompt: "Act as an elite conversion copywriter. I am launching a services called '[Insert Service]'. Write a high-converting landing page headline using the standard 'Before-After-Bridge' framework. Provide three powerful visual bullet points focusing on active relief of pain points, followed by a brief, urgent and premium call-to-action sentence.",
-    description: "أمر مهندس خصيصاً لمطالبة الروبوتات الذكية مثل Gemini أو GPT-4 بصياغة نصوص وعناوين إعلانية فاخرة ترفع نسبة المبيعات.",
-    tags: ["كتابة إعلانية", "صفحة هبوط", "جيميني", "إطار عمل"],
-    difficulty: "Simple",
-    imageUrl: "/src/assets/images/creative_hologram_1779813617961.png"
+    prompt: `Create a 1:1 square cinematic emblem artwork set against a matte black rock wall background, showing deep stone texture, natural cracks, rough surfaces, and subtle variations in darkness. Use dramatic side lighting to create strong contrast, deep shadows, and a powerful sense of depth while keeping the background dark, solid, and intimidating.
+
+In the foreground, place a bold circular emblem with heavy presence, crafted from layered dark metal and aged gold. The circular frame is thick and solid, with engraved details, worn edges, and subtle scratches that suggest strength, history, and authority. At the top of the emblem, integrate a majestic eagle with wide wings and sharp features, symbolizing dominance and leadership. The eagle is sculpted in metal with gold highlights catching the light, enhancing its power.
+
+Inside the center of the circle, write one Arabic name: الاسم. The name should be large, dominant, and impossible to ignore, written in a playful hand-drawn Arabic style that still feels strong and confident. The strokes are bold, rounded, and expressive, with slight irregularities like hand-drawn ink, but with enough thickness and weight to feel masculine and powerful. The text appears slightly raised or carved into a dark metal surface, with gold fill, deep inner shadows, and clear separation from the background.
+
+At the bottom of the emblem, attach a thick curved ribbon or metal plaque, firmly integrated into the design. On this ribbon, automatically generate a short powerful Arabic phrase (2–4 words) that praises the name holder, expressing qualities such as strength, honor, courage, leadership, or excellence. The phrase should be written in the same playful handwritten Arabic drawing style, but heavier and more grounded, engraved or painted in gold with visible texture and depth.
+
+Use cinematic lighting with controlled highlights, soft glow on gold edges, and deep shadows to enhance realism and authority. The overall mood is powerful, confident, heroic, and timeless, blending raw strength with artistic personality. Ultra-high resolution, sharp details, realistic materials, no English text, no logos, no extra symbols.`,
+    description: "أمر نصي معد خصيصاً في Gemini لإعادة تصميم اسمك الشخصي بشكل إحترافي وجذاب.",
+    tags: ["تصميم اسم", "شعار", "جيميني", "سينمائي"],
+    difficulty: "Advanced",
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779881734/4002_k6mbws.png"
   },
   {
     id: "p5",
-    title: "سيرفر بيولوجي مضيء للكمبيوتر الكمومي",
+    title: "صورة منتج بخلفية بيضاء",
     category: "Products",
-    prompt: "Macro photography of an advanced biological supercomputer core, neon blue neurons pulse with liquid lavender optic data, glowing synthetic glass cooling tubes, deep obsidian dark case, hyper detailed depth of field, metallic copper wiring, 3D render feel mixed with high-end photography",
-    description: "يصنع هذا الأمر لقطات ماكرو مدهشة لأجهزة متطورة وسيرفرات ذات تفاصيل علمية وسينمائية بارزة.",
-    tags: ["رندرة 3D", "تفاصيل علمية", "مفهوم فني"],
+    prompt: `Transform the uploaded product photo into a professional high-end product photography shot. Keep the product’s exact appearance, colors, shape, texture, branding, proportions, and all packaging details completely accurate and unaltered.
+Remove the entire original background, including hands, tables, reflections, shadows, or any distracting elements. Place the product on a seamless pure white background (#FFFFFF) with no visible environment or scene details. The background must remain completely clean, solid white, and uniform across the entire image.
+Use professional studio lighting with soft balanced highlights, clean reflections, gentle shadows, and subtle depth to maintain a realistic premium commercial look. Add only a soft natural shadow directly beneath the product for realism without affecting the clean white background.
+The final image should look like a premium e-commerce studio product photo suitable for Amazon, online stores, catalogs, social media ads, and professional brand campaigns.
+Ultra-clean, photorealistic 4K product photography.`,
+    description: "أمر نصي معد خصيصاً في Gemini لتحسين جودة صورة أي منتج وعزل الخلفية ووضع خلفية بيضاء نظيفة.",
+    tags: ["منتجات", "خلفية بيضاء", "جيميني", "تعديل صور"],
     difficulty: "Advanced",
-    imageUrl: "/src/assets/images/futuristic_ai_hero_1779813579793.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779880085/a183fed1-f313-4830-830c-f7782a23bfb3_xsne18.jpg"
   },
   {
     id: "p6",
-    title: "سفينة فضائية أمام حلقة كوكب المشتري",
+    title: "صورة بتصميم مميز لإسمك",
     category: "Other",
-    prompt: "The camera slowly pulls back from a cozy wooden cabin suspended outside an orbital ring in the clouds of Jupiter, glowing electric orange light pouring from the cabin windows, ambient cosmic dust floating, massive gas giant storm spinning silently in background, 8k resolution, cinematic atmosphere",
-    description: "مصمم لتوليد فيديو بطيء وهادئ يصف تراجع الكاميرا مع الحفاظ الكامل على دقة السحب وتوهج المركبات.",
-    tags: ["تأثير الفضاء", "حركة فيديو", "لوما", "كلينغ"],
-    difficulty: "Expert",
-    imageUrl: "/src/assets/images/ai_art_creation_1779813598185.png"
+    prompt: `Create a 1:1 square royal feminine design that feels luxurious, graceful, and highly attractive to women.
+
+The composition features a refined circular center framed with delicate gold accents, soft floral elements, subtle heart motifs, and elegant curves — minimal, polished, and sophisticated (not playful, not childish).
+Use a rich yet soft color palette: rose gold, blush pink, champagne gold, pearl white, with gentle gradients and a silky matte finish.
+Inside the central circle, place one Arabic name: [الاسم], centered and prominent, written in a luxurious elegant Arabic typography with smooth flowing strokes, balanced proportions, and a regal presence. The text should feel feminine, confident, and timeless — slightly calligraphic but clean and modern.
+At the bottom, add a refined curved ribbon or elegant plaque. On this ribbon, automatically generate a short refined Arabic sentence praising the name holder, WITHOUT using the word “يا”, written in a soft feminine handwritten Arabic style that feels graceful, warm, and flattering (elegance, charm, dignity, beauty). The phrase should adapt naturally to the name and feel exclusive and personal.
+Lighting is soft and cinematic, with gentle highlights on gold details, subtle shadows, and depth.
+
+High-end illustration quality, smooth textures, balanced symmetry, no clutter, no English text, no cartoon elements.`,
+    description: "أمر نصي معد خصيصاً في Gemini لإعادة تصميم اسمك الشخصي بشكل إحترافي وجذاب.",
+    tags: ["تصميم اسم", "ملكي", "جيميني", "نسائي"],
+    difficulty: "Advanced",
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779881940/4003_vuh3sx.png"
   }
 ];
 
 export const EN_PROMPTS: PromptItem[] = [
   {
     id: "p1",
-    title: "Cinematic Cyberpunk Operative",
+    title: "Black and White Portrait",
     category: "Personal",
-    prompt: "A cinematic wide shot of an elite cyberpunk operative wearing modular gear, looking towards a gargantuan purple neural network holographic system, volumetric electric neon blue mist, photorealistic face, hyper-detailed, shot on 85mm anamorphic lens, beautiful ambient light reflections, 8k resolution --ar 16:9 --style raw",
-    description: "Meticulously optimized Midjourney prompt for photorealistic character shots with stunning neon reflections.",
-    tags: ["cyberpunk", "cinematic", "portrait", "midjourney"],
+    prompt: "Enhance this photo into a vibrant aesthetic scene. Keep 100% of the man's real face exactly as it is (do not modify facial features) without any alteration. As a dramatic, ultra-realistic close-up in black and white with high-contrast cinematic lighting from the side, highlighting the contours of his face and beard, casting deep shadows. He wears aviator, reflective sunglasses. He gazes confidently upward into a dark void. The sunglasses reflect a city's towering skyline. The atmosphere is mysterious with a minimalist black background. Details in 4K.",
+    description: "Meticulously optimized Gemini prompt designed to elevate portraits while perfectly retaining original facial features and structure.",
+    tags: ["portrait", "black-white", "gemini", "cinematic"],
     difficulty: "Advanced",
-    imageUrl: "/src/assets/images/futuristic_ai_hero_1779813579793.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779878821/001_vpveej.png"
   },
   {
     id: "p2",
-    title: "Glassmorphic Tech Dashboard Mockup",
+    title: "Playful Eid Al-Adha Cartoon Card",
     category: "Cards",
-    prompt: "Ultra-premium futuristic dark application interface mockup, glassmorphic layout cards, deep charcoal background, subtle vibrant neon cyan glowing borders, professional sans-serif typography, elegant statistical charts, high-end tech corporate dashboard vibe, pristine aesthetic presentation --v 6.0",
-    description: "Generates ultra-clean layouts with glassmorphic depth to inspire digital web portals.",
-    tags: ["ui-ux", "glassmorphism", "inspiration", "figma"],
+    prompt: `A highly creative premium 3D cartoon-style inspired by modern animated movie aesthetics and playful social-media selfie culture. Create a funny group selfie moment featuring multiple Eid sacrificial animals together on a studio like low saturated red background. We can fully see the characters, full body.
+The main focus should be a cheerful oversized person from the uploaded reference image, keep 100% of his real face exactly as it is (do not modify facial features) without any alteration. In casual modern outfit, holding a modern smartphone in one hand while taking a selfie. oversized head and caricatured body proportions, ,energetic dominant personality. The person should stand slightly in front like the group leader taking the selfie. Around the person, several expressive Eid animals pose together naturally: a playful goat, a fluffy dumba/sheep, a cute big cow, and a tall camel.
+All animals should have exaggerated emotional cartoon expressions, wide smiles, funny poses, and energetic body language as if squeezing together for a joyful Eid selfie moment. The person holding the phone should have the strongest presence in the frame with dynamic selfie angle composition. Some animals can lean toward the camera, raise hooves, smile dramatically, or make funny selfie reactions for a premium comedic storytelling feel.
+Add a huge “عيد مبارك” text in a bubbly white font. Pixar-style premium 3D rendering, ultra detailed fur textures, smooth cinematic shading, oversized expressive eyes, realistic horn textures, soft rounded shapes, luxury CGI animation quality, modern conceptual Eid campaign aesthetic. no environment, no extra props, only soft grounded shadows beneath the characters for depth.
+Ultra high quality, masterpiece rendering, crisp edges, cinematic studio lighting, luxury animated poster style, ultra HD, no watermark.`,
+    description: "Meticulously optimized Gemini prompt designed to turn portraits into a playful premium 3D Pixar-style interactive Eid selfie card with cute animals.",
+    tags: ["cards", "eid", "gemini", "3d-render"],
     difficulty: "Expert",
-    imageUrl: "/src/assets/images/creative_hologram_1779813617961.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779880797/3001_hnfilr.png"
   },
   {
     id: "p3",
-    title: "Bioluminescent Flower Timelapse",
+    title: "Project Logo Designer",
     category: "Other",
-    prompt: "A close-up cinematic time-lapse video of an crystalline orchid blooming under alien solar rays, petals constructed of fluid light and electric purple fibers, camera gently zooms out, bioluminescent dust particles swirling around, ultra high-speed camera, 60fps, 4k resolution, incredibly detailed texture morphing",
-    description: "Perfect for Runway Gen-3 or Sora to generate fluid organic growth and morphing actions.",
-    tags: ["motion", "timelapse", "runway", "sora"],
+    prompt: `Design a modern, professional logo for a (اكتب هنا نوع النشاط) named "اسم مشروعك بالانجليزي". The design should be simple, distinctive, and inspired by modern design trends of 2026.
+Create a clean geometric monoline icon inspired by the meaning of the name or its letters, with smart use of negative space, balanced composition, and strong contemporary typography. The logo system should consist of an icon + the brand name.
+The color palette should be automatically chosen to suit the nature of the project and its brand identity.
+Style: flat vector design, suitable for full brand identity use including signage, packaging, and digital platforms. Central composition, clean background, elegant, timeless, and highly recognizable logo.
+The logo name must appear in both English and Arabic in a dynamic adaptive layout that fits the logo composition. The Arabic equivalent should appear in its designated place: (اسم مشروعك بالعربي).
+The logo must contain only one main visual element, with no extra elements, ornaments, stars, or surrounding effects.
+Vertical composition with a 3:4 aspect ratio.`,
+    description: "Meticulously optimized Gemini prompt designed to turn your project name and activity into an elegant, minimalistic, and creative logo.",
+    tags: ["logo", "branding", "gemini", "vector"],
     difficulty: "Advanced",
-    imageUrl: "/src/assets/images/ai_art_creation_1779813598185.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779881311/4001_mua4cu.jpg"
   },
   {
     id: "p4",
-    title: "Before-After-Bridge Sales Formula",
+    title: "Custom Name Art Design",
     category: "Other",
-    prompt: "Act as an elite conversion copywriter. I am launching a services called '[Insert Service]'. Write a high-converting landing page headline using the standard 'Before-After-Bridge' framework. Provide three powerful visual bullet points focusing on active relief of pain points, followed by a brief, urgent and premium call-to-action sentence.",
-    description: "Engineered prompt to guide LLMs like Gemini or GPT-4 in writing persuasive high-converting copy.",
-    tags: ["copywriting", "landing-page", "gemini", "framework"],
-    difficulty: "Simple",
-    imageUrl: "/src/assets/images/creative_hologram_1779813617961.png"
+    prompt: `Create a 1:1 square cinematic emblem artwork set against a matte black rock wall background, showing deep stone texture, natural cracks, rough surfaces, and subtle variations in darkness. Use dramatic side lighting to create strong contrast, deep shadows, and a powerful sense of depth while keeping the background dark, solid, and intimidating.
+
+In the foreground, place a bold circular emblem with heavy presence, crafted from layered dark metal and aged gold. The circular frame is thick and solid, with engraved details, worn edges, and subtle scratches that suggest strength, history, and authority. At the top of the emblem, integrate a majestic eagle with wide wings and sharp features, symbolizing dominance and leadership. The eagle is sculpted in metal with gold highlights catching the light, enhancing its power.
+
+Inside the center of the circle, write one Arabic name: الاسم. The name should be large, dominant, and impossible to ignore, written in a playful hand-drawn Arabic style that still feels strong and confident. The strokes are bold, rounded, and expressive, with slight irregularities like hand-drawn ink, but with enough thickness and weight to feel masculine and powerful. The text appears slightly raised or carved into a dark metal surface, with gold fill, deep inner shadows, and clear separation from the background.
+
+At the bottom of the emblem, attach a thick curved ribbon or metal plaque, firmly integrated into the design. On this ribbon, automatically generate a short powerful Arabic phrase (2–4 words) that praises the name holder, expressing qualities such as strength, honor, courage, leadership, or excellence. The phrase should be written in the same playful handwritten Arabic drawing style, but heavier and more grounded, engraved or painted in gold with visible texture and depth.
+
+Use cinematic lighting with controlled highlights, soft glow on gold edges, and deep shadows to enhance realism and authority. The overall mood is powerful, confident, heroic, and timeless, blending raw strength with artistic personality. Ultra-high resolution, sharp details, realistic materials, no English text, no logos, no extra symbols.`,
+    description: "Meticulously optimized Gemini prompt designed to turn your personal name into a professional, highly styled cinematic 3D emblem illustration.",
+    tags: ["name-art", "emblem", "gemini", "cinematic"],
+    difficulty: "Advanced",
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779881734/4002_k6mbws.png"
   },
   {
     id: "p5",
-    title: "Quantum Supercomputer Core",
+    title: "White Background Product Shot",
     category: "Products",
-    prompt: "Macro photography of an advanced biological supercomputer core, neon blue neurons pulse with liquid lavender optic data, glowing synthetic glass cooling tubes, deep obsidian dark case, hyper detailed depth of field, metallic copper wiring, 3D render feel mixed with high-end photography",
-    description: "Generates stunning tech-concept close-ups with professional depth of field.",
-    tags: ["3d-render", "tech-details", "concept-art"],
+    prompt: `Transform the uploaded product photo into a professional high-end product photography shot. Keep the product’s exact appearance, colors, shape, texture, branding, proportions, and all packaging details completely accurate and unaltered.
+Remove the entire original background, including hands, tables, reflections, shadows, or any distracting elements. Place the product on a seamless pure white background (#FFFFFF) with no visible environment or scene details. The background must remain completely clean, solid white, and uniform across the entire image.
+Use professional studio lighting with soft balanced highlights, clean reflections, gentle shadows, and subtle depth to maintain a realistic premium commercial look. Add only a soft natural shadow directly beneath the product for realism without affecting the clean white background.
+The final image should look like a premium e-commerce studio product photo suitable for Amazon, online stores, catalogs, social media ads, and professional brand campaigns.
+Ultra-clean, photorealistic 4K product photography.`,
+    description: "Meticulously optimized Gemini prompt designed to remove raw backgrounds and place products onto high-end seamless studio white backgrounds perfectly maintaining colors and labels.",
+    tags: ["products", "white-bg", "gemini", "e-commerce"],
     difficulty: "Advanced",
-    imageUrl: "/src/assets/images/futuristic_ai_hero_1779813579793.png"
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779880085/a183fed1-f313-4830-830c-f7782a23bfb3_xsne18.jpg"
   },
   {
     id: "p6",
-    title: "Jupiter Low-Orbit Flight",
+    title: "Royal Feminine Name Art",
     category: "Other",
-    prompt: "The camera slowly pulls back from a cozy wooden cabin suspended outside an orbital ring in the clouds of Jupiter, glowing electric orange light pouring from the cabin windows, ambient cosmic dust floating, massive gas giant storm spinning silently in background, 8k resolution, cinematic atmosphere",
-    description: "Perfect prompt for smooth galactic panning camera angles.",
-    tags: ["sci-fi", "panning", "luma", "kling"],
-    difficulty: "Expert",
-    imageUrl: "/src/assets/images/ai_art_creation_1779813598185.png"
+    prompt: `Create a 1:1 square royal feminine design that feels luxurious, graceful, and highly attractive to women.
+
+The composition features a refined circular center framed with delicate gold accents, soft floral elements, subtle heart motifs, and elegant curves — minimal, polished, and sophisticated (not playful, not childish).
+Use a rich yet soft color palette: rose gold, blush pink, champagne gold, pearl white, with gentle gradients and a silky matte finish.
+Inside the central circle, place one Arabic name: [الاسم], centered and prominent, written in a luxurious elegant Arabic typography with smooth flowing strokes, balanced proportions, and a regal presence. The text should feel feminine, confident, and timeless — slightly calligraphic but clean and modern.
+At the bottom, add a refined curved ribbon or elegant plaque. On this ribbon, automatically generate a short refined Arabic sentence praising the name holder, WITHOUT using the word “يا”, written in a soft feminine handwritten Arabic style that feels graceful, warm, and flattering (elegance, charm, dignity, beauty). The phrase should adapt naturally to the name and feel exclusive and personal.
+Lighting is soft and cinematic, with gentle highlights on gold details, subtle shadows, and depth.
+
+High-end illustration quality, smooth textures, balanced symmetry, no clutter, no English text, no cartoon elements.`,
+    description: "Meticulously optimized Gemini prompt designed to transform female Arabic names into highly elegant, luxurious royal-themed artwork with soft rose gold and blush tones.",
+    tags: ["name-art", "royal", "gemini", "feminine"],
+    difficulty: "Advanced",
+    imageUrl: "https://res.cloudinary.com/deuwh0ysg/image/upload/v1779881940/4003_vuh3sx.png"
   }
 ];
 

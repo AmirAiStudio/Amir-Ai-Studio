@@ -24,7 +24,7 @@ import {
   Sun,
   Moon
 } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Course, PromptItem, PortfolioItem, OptimizeResponse } from "./types";
 import GlowingParticles from "./components/GlowingParticles";
 import GlowTiltCard from "./components/GlowTiltCard";
@@ -52,6 +52,34 @@ export default function App() {
   const coursesList = isArabic ? AR_COURSES : EN_COURSES;
   const promptsList = isArabic ? AR_PROMPTS : EN_PROMPTS;
   const portfolioList = isArabic ? AR_PORTFOLIO : EN_PORTFOLIO;
+
+  // State to rotate random prompt on the homepage bento card
+  const [randomPromptIndex, setRandomPromptIndex] = useState<number>(0);
+
+  // Rotate a random prompt from lists every 8 seconds (8000ms)
+  useEffect(() => {
+    if (promptsList.length === 0) return;
+    
+    // Choose initial random index
+    const initialIndex = Math.floor(Math.random() * promptsList.length);
+    setRandomPromptIndex(initialIndex);
+
+    const interval = setInterval(() => {
+      setRandomPromptIndex((prevIndex) => {
+        if (promptsList.length <= 1) return 0;
+        let nextIndex = prevIndex;
+        // Avoid selecting the same index consecutively
+        while (nextIndex === prevIndex) {
+          nextIndex = Math.floor(Math.random() * promptsList.length);
+        }
+        return nextIndex;
+      });
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [promptsList.length]);
+
+  const currentRandomPrompt = promptsList[randomPromptIndex] || promptsList[0];
 
   // Navigation State
   const [activeTab, setActiveTab] = useState<"home" | "about" | "courses" | "library" | "showcase" | "contact">("home");
@@ -516,12 +544,12 @@ export default function App() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-tr from-[#00f0ff]/15 to-[#bd00ff]/15 rounded-full blur-[80px] pointer-events-none"></div>
 
             {/* Glass panel */}
-            <GlowTiltCard className="w-full max-w-sm p-6 flex flex-col space-y-5 shadow-2xl" isDarkMode={isDarkMode}>
+            <GlowTiltCard className="w-full max-w-sm p-6 flex flex-col space-y-5 shadow-2xl overflow-hidden" isDarkMode={isDarkMode}>
               
               {/* Glass Top light line bar */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-b from-[#00f0ff]/15 to-transparent blur-2xl"></div>
               
-              <div className="flex justify-between items-center pb-2 border-b border-white/5">
+              <div className="flex justify-between items-center pb-2 border-b border-white/5 z-10">
                 <div className="flex items-center space-x-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
@@ -530,40 +558,68 @@ export default function App() {
                 <span className="text-[9px] font-mono text-[#00f0ff] tracking-widest uppercase font-bold">{isArabic ? "جديد - منصة الأوامر" : "NEW - COMMANDS PLATFORM"}</span>
               </div>
 
-              {/* Course Thumbnail placeholder styled for Command */}
-              <div className="relative rounded-2xl overflow-hidden aspect-video border border-slate-900 group cursor-pointer" onClick={() => scrollToSection("library-section", "library")}>
-                <img 
-                  src="/src/assets/images/futuristic_ai_hero_1779813579793.png" 
-                  alt="Latest Command AI Showcase" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent flex items-end p-3">
-                  <p className="text-[11px] font-mono text-[#00f0ff] font-bold">{isArabic ? "أحدث الأوامر المضافة حيوياً" : "LATEST RECORDED COMMAND"}</p>
-                </div>
-              </div>
+              <div className="relative min-h-[380px] flex flex-col justify-between">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={randomPromptIndex}
+                    initial={{ opacity: 0, scale: 0.98, y: 8 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.98, y: -8 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="flex flex-col space-y-5 h-full justify-between"
+                  >
+                    {/* Course Thumbnail placeholder styled for Command */}
+                    <div className="relative rounded-2xl overflow-hidden aspect-video border border-slate-900 group cursor-pointer" onClick={() => {
+                      setSelectedPromptCategory(currentRandomPrompt?.category || "All");
+                      scrollToSection("library-section", "library");
+                    }}>
+                      <img 
+                        src={currentRandomPrompt?.imageUrl || "/src/assets/images/futuristic_ai_hero_1779813579793.png"} 
+                        alt="Latest Command AI Showcase" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent flex items-end p-3">
+                        <p className="text-[11px] font-mono text-[#00f0ff] font-bold">{isArabic ? "أحدث الأوامر المضافة حيوياً" : "LATEST RECORDED COMMAND"}</p>
+                      </div>
+                    </div>
 
-              {/* Spotlight Command Info */}
-              <div className="space-y-1.5 text-right">
-                <div className="flex justify-between items-center">
-                  <span className="text-[10px] text-slate-400 font-mono">{isArabic ? "التصنيف الإبداعي" : "CREATIVE CATEGORY"}</span>
-                  <span className="text-[9px] bg-cyan-950 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded-full uppercase font-bold">{isArabic ? "ميدجورني" : "MIDJOURNEY"}</span>
-                </div>
-                <h3 className="text-base font-brand font-black text-white tracking-wide">
-                  {promptsList[0]?.title}
-                </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  {promptsList[0]?.description}
-                </p>
-              </div>
+                    {/* Spotlight Command Info */}
+                    <div className="space-y-1.5 text-right flex-grow">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] text-slate-400 font-mono">{isArabic ? "التصنيف الإبداعي" : "CREATIVE CATEGORY"}</span>
+                        <span className="text-[9px] bg-cyan-950 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded-full uppercase font-bold">
+                          {currentRandomPrompt?.category === "Personal" 
+                            ? (isArabic ? "شخصية" : "Personal") 
+                            : currentRandomPrompt?.category === "Products" 
+                            ? (isArabic ? "منتجات" : "Products") 
+                            : currentRandomPrompt?.category === "Cards" 
+                            ? (isArabic ? "كروت" : "Cards") 
+                            : (isArabic ? "أخرى" : "Other")}
+                        </span>
+                      </div>
+                      <h3 className="text-base font-brand font-black text-white tracking-wide">
+                        {currentRandomPrompt?.title}
+                      </h3>
+                      <p className="text-xs text-slate-400 leading-relaxed max-h-24 overflow-y-auto custom-scrollbar">
+                        {currentRandomPrompt?.description}
+                      </p>
+                    </div>
 
-              {/* Click Trigger */}
-              <button 
-                onClick={() => scrollToSection("library-section", "library")}
-                className="w-full py-3 bg-slate-950 hover:bg-slate-900 border border-slate-900 hover:border-[#00f0ff]/30 text-xs font-mono font-bold tracking-wider text-slate-300 hover:text-[#00f0ff] rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
-              >
-                <span>{isArabic ? "استعرض الأمر" : "Explore Command"}</span>
-                {isArabic ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-              </button>
+                    {/* Click Trigger */}
+                    <button 
+                      onClick={() => {
+                        setSelectedPromptCategory(currentRandomPrompt?.category || "All");
+                        scrollToSection("library-section", "library");
+                      }}
+                      className="w-full py-3 bg-slate-950 hover:bg-slate-900 border border-slate-900 hover:border-[#00f0ff]/30 text-xs font-mono font-bold tracking-wider text-slate-300 hover:text-[#00f0ff] rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <span>{isArabic ? "استعرض الأمر" : "Explore Command"}</span>
+                      {isArabic ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                    </button>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
 
             </GlowTiltCard>
 
